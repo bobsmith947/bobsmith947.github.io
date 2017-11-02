@@ -1,8 +1,11 @@
+/*
+  DO NOT MERGE WITH MASTER
+*/
 //set link class according to href
 function setLinks() {
   var elems = document.links;
   for (var i = 0; i < elems.length; i++) {
-    if (elems[i].href.includes(document.domain)) elems[i].className = "int";
+    if (!elems[i].href.includes("http")) elems[i].className = "int";
     else elems[i].className = "ext";
   }
   elems = document.getElementsByClassName("ext");
