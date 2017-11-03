@@ -1,4 +1,3 @@
-//set link class according to href
 function setLinks() {
   var elems = document.links;
   for (var i = 0; i < elems.length; i++) {
@@ -9,17 +8,18 @@ function setLinks() {
   for (var i = 0; i < elems.length; i++) elems[i].target = "_blank";
   return null;
 }
-//switch things that make more sense for mobile
 function mobileAdapt() {
   var tip = document.getElementById("boxTip"), str = "each box to view the full list.";
   if (screen.width <= 768) tip.innerHTML = "Tap " + str;
   else tip.innerHTML = "Click " + str;
   return null;
 }
+document.body.onload = setLinks();
+document.body.onload = mobileAdapt();
 //clickable boxes
 var prev = null;
 document.body.onclick = ev => {
-  var tar = (ev.target) ? ev.target : ev.srcElement;
+  var tar = ev.target;
   if (prev !== null) {
     if (prev.parentElement.className === "box") resetBox(prev.parentElement);
     else if (prev.className === "box") resetBox(prev);
