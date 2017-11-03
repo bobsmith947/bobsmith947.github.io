@@ -9,6 +9,13 @@ function setLinks() {
   for (var i = 0; i < elems.length; i++) elems[i].target = "_blank";
   return null;
 }
+//switch things that make more sense for mobile
+function mobileAdapt() {
+  var tip = document.getElementById("boxTip"), str = "each box to view the full list.";
+  if (screen.width <= 768) tip.innerHTML = "Tap " + str;
+  else tip.innerHTML = "Click " + str;
+  return null;
+}
 //clickable boxes
 var prev = null;
 document.body.onclick = ev => {
