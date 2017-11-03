@@ -1,20 +1,11 @@
 // Forked from https://codepen.io/gapcode/pen/vEJNZN
 
-// Get IE or Edge browser version
 var version = detectIE();
-
 if (version) {
   window.alert("Please don't use Internet Explorer! The site will not work!");
   window.open("https://www.google.com/chrome/browser/desktop/index.html", "_self");
 }
 
-// add details to debug result
-//document.getElementById('details').innerHTML = window.navigator.userAgent;
-
-/**
- * detect IE
- * returns version of IE or false, if browser is not Internet Explorer
- */
 function detectIE() {
   var ua = window.navigator.userAgent;
 
@@ -38,7 +29,6 @@ function detectIE() {
     //return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
     return true;
   }
-
   var trident = ua.indexOf('Trident/');
   if (trident > 0) {
     // IE 11 => return version number
@@ -46,14 +36,12 @@ function detectIE() {
     //return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
     return true;
   }
-
   var edge = ua.indexOf('Edge/');
   if (edge > 0) {
     // Edge (IE 12+) => return version number
     //return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
-    return true;
+    return false;
   }
-
   // other browser
   return false;
 }
