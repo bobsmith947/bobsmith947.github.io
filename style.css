@@ -12,6 +12,7 @@ header, footer {
 img {
   display: block;
   margin: auto;
+  padding: 15px;
 }
 h1, h2, h3, h4, h5, h6 {
   color: black;
@@ -42,6 +43,12 @@ iframe {
   width: 50%;
   height: 500px;
 }
+progress {
+  display: block;
+  margin: 15px auto;
+  width: 50%;
+  background-color: green;
+}
 .ext:link {color: blue}
 .ext:visited {color: green}
 .ext:hover {color: red}
@@ -68,6 +75,7 @@ iframe {
   margin: auto;
   width: 25%;
 }
+.m {margin: 5%}
 #tmln {margin-left: 8%}
 /*mobile profile*/
 @media (max-width: 768px) {
