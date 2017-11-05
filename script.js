@@ -8,14 +8,17 @@ function setLinks() {
   for (var i = 0; i < elems.length; i++) elems[i].target = "_blank";
   return null;
 }
-function mobileAdapt() {
+function boxAdapt() {
   var tip = document.getElementById("boxTip"), str = "each box to view the full list.";
+  try {
   if (screen.width <= 768) tip.innerHTML = "Tap " + str;
   else tip.innerHTML = "Click " + str;
+} finally {
   return null;
 }
+}
 document.body.onload = setLinks();
-document.body.onload = mobileAdapt();
+document.body.onload = boxAdapt();
 //clickable boxes
 var prev = null;
 document.body.onclick = ev => {
@@ -31,12 +34,12 @@ document.body.onclick = ev => {
 function selectBox(elem) {
   elem.style.overflow = "auto";
   elem.style.border = "3px solid gray";
-  return elem;
+  return null;
 }
 function resetBox(elem) {
   elem.style.overflow = "hidden";
   elem.style.border = "3px dashed gray";
-  return elem;
+  return null;
 }
 //konami code easter egg
 var keys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65], pos = 0;

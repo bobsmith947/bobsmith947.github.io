@@ -76,7 +76,7 @@ progress {
   width: 25%;
 }
 .m {margin: 5%}
-#tmln {margin-left: 8%}
+#boxMargin {margin-left: 8%}
 /*mobile profile*/
 @media (max-width: 768px) {
   body {
@@ -93,5 +93,5 @@ progress {
     margin-left: -40px;
     width: auto;
   }
-  #tmln {margin-right: 8%}
+  #boxMargin {margin-right: 8%}
 }
