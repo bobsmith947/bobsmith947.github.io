@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="isIE.js" type="text/javascript" charset="UTF-8"></script>
     <script src="script.js" type="text/javascript" charset="UTF-8" defer></script>
     <title>Granular Software :: Home</title></head>
-  <body onload="setLinks()">
+  <body>
     <header>
       <noscript>Your browser does not support JavaScript (or it's been disabled). Some features may not work.</noscript>
       <img id="top" alt="logo" srcset="logo.png 1280w" sizes="(max-width: 768px) 50vw, 25vw">
@@ -36,7 +37,7 @@
             <li>Understand good management</li>
             <li>Get experience deploying an application</li></ul>
       <h1 id="timeline">Project Timeline</h1>
-      <h6>Click each box to view full the full list.</h6>
+      <h6 id="boxTip"></h6>
       <div id="tmln">
         <ul class="box" id="oct">
           October 10 (partial day)
