@@ -6,6 +6,7 @@ function setLinks() {
     else elems[i].className = "ext";
   }
   elems = document.getElementsByClassName("ext");
+  len = elems.length;
   for (i = 0; i < len; i++) elems[i].target = "_blank";
   return undefined;
 }
