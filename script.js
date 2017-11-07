@@ -1,4 +1,30 @@
 "use strict";
+document.body.onload = setLinks(); //set class based on href and add appropriate target
+document.body.onload = boxAdapt(); //modify tip text to make more sense for mobile
+//clickable boxes
+var prev = undefined;
+document.body.onclick = ev => {
+  var tar = ev.target;
+  if (prev !== undefined) {
+    if (prev.parentElement.className === "box") resetBox(prev.parentElement);
+    else if (prev.className === "box") resetBox(prev);
+  }
+  if (tar.parentElement.className === "box") selectBox(tar.parentElement);
+  else if (tar.className === "box") selectBox(tar);
+  prev = tar;
+}
+//konami code easter egg
+var keys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65], pos = 0;
+document.body.onkeydown = ev => {
+  var key = ev.keyCode;
+  if (key === keys[pos]) {
+    pos++;
+    if(pos >= keys.length) {
+      pos = 0;
+      document.getElementById("top").srcset = "tiger.png 1280w";
+    }
+  } else pos = 0;
+}
 function setLinks() {
   var elems = document.links, len = elems.length, i = undefined;
   for (i = 0; i < len; i++) {
@@ -19,20 +45,6 @@ function boxAdapt() {
     return undefined;
 }
 }
-document.body.onload = setLinks();
-document.body.onload = boxAdapt();
-//clickable boxes
-var prev = undefined;
-document.body.onclick = ev => {
-  var tar = ev.target;
-  if (prev !== undefined) {
-    if (prev.parentElement.className === "box") resetBox(prev.parentElement);
-    else if (prev.className === "box") resetBox(prev);
-  }
-  if (tar.parentElement.className === "box") selectBox(tar.parentElement);
-  else if (tar.className === "box") selectBox(tar);
-  prev = tar;
-}
 function selectBox(elem) {
   elem.style.overflow = "auto";
   elem.style.border = "3px solid gray";
@@ -42,16 +54,4 @@ function resetBox(elem) {
   elem.style.overflow = "hidden";
   elem.style.border = "3px dashed gray";
   return undefined;
-}
-//konami code easter egg
-var keys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65], pos = 0;
-document.body.onkeydown = ev => {
-  var key = ev.keyCode;
-  if (key === keys[pos]) {
-    pos++;
-    if(pos >= keys.length) {
-      pos = 0;
-      document.getElementById("top").srcset = "tiger.png 1280w";
-    }
-  } else pos = 0;
 }
