@@ -1,7 +1,7 @@
 @charset "UTF-8";
-* {box-sizing: border-box}
 :target {color: red}
 body {
+  box-sizing: border-box;
   background-color: gainsboro;
   font-family: Consolas, "Courier New", Courier, monospace;
 }
