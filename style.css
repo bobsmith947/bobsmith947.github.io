@@ -47,7 +47,6 @@ progress {
   display: block;
   margin: 15px auto;
   width: 50%;
-  background-color: green;
 }
 .ext:link {color: blue}
 .ext:visited {color: green}
@@ -87,8 +86,8 @@ progress {
   margin: auto;
   text-indent: 25px;
   }
-  iframe {width: 95%}
-  .box {width: 95%}
+  iframe {width: 100%}
+  .box {width: calc(100% - 18px)}
   .lst {
     margin-left: -40px;
     width: auto;
