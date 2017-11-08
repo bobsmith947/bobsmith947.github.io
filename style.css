@@ -75,10 +75,9 @@ progress {
   width: 25%;
 }
 .m {margin: 5%}
-#tip {display: none}
 /*tablet profile*/
 @media (min-width: 768px) and (max-width: 1024px) {
-  .box {width: calc(50% - 21px)}
+  .box {width: calc(50% - 23px)}
 }
 /*mobile profile*/
 @media (max-width: 767px) {
