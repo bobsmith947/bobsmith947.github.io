@@ -1,6 +1,6 @@
 "use strict";
 document.body.onload = setLinks(); //set class based on href and add appropriate target
-document.body.onload = boxAdapt(); //modify tip text to make more sense for mobile
+document.body.onload = boxAdapt(); //modify tip text based on screen width
 //clickable boxes
 var prev = undefined;
 document.body.onclick = ev => {
@@ -40,6 +40,7 @@ function boxAdapt() {
   var tip = document.getElementById("boxTip"), str = "each box to view the full list.";
   try {
     if (screen.width <= 768) tip.innerHTML = "Tap " + str;
+    else if (screen.width <= 1024) tip.innerHTML = "Click/tap " + str;
     else tip.innerHTML = "Click " + str;
 } finally {
     return undefined;
