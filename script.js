@@ -21,7 +21,7 @@ document.body.onkeydown = ev => {
     pos++;
     if(pos >= keys.length) {
       pos = 0;
-      document.getElementById("top").srcset = "tiger.png 1280w";
+      document.getElementById("top").srcset = "img/tiger.png 1280w";
     }
   } else pos = 0;
 }
