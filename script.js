@@ -1,5 +1,5 @@
 "use strict";
-document.body.onload = function() {
+document.body.onload = () => {
   var tip = document.getElementById("boxTip"), str = "each box to view the full list.";
   var elems = document.links, len = elems.length, i = undefined;
   //modify box tip text based on screen width
@@ -19,8 +19,9 @@ document.body.onload = function() {
   elems = document.images;
   len = elems.length;
   for (i = 0; i < len; i++) {
+    //elems[i].addEventListener("error", window.alert("Your browser doesn't support HTML5! Some features will not work."))
     if (screen.width > 1024 && elems[i].className === "exp") {
-      elems[i].addEventListener("click", expand);
+      elems[i].addEventListener("click", expandImg);
       elems[i].title = "Click to expand.";
     }
   }
@@ -57,7 +58,7 @@ function resetBox(elem) {
   elem.style.overflow = "hidden";
   elem.style.border = "3px dashed gray";
 }
-function expand(ev) {
+function expandImg(ev) {
   var elem = ev.target;
   switch(elem.sizes) {
     case "90vw":
