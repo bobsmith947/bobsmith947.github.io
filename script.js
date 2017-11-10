@@ -1,10 +1,14 @@
 "use strict";
 document.body.onload = setLinks(); //set class based on href and add appropriate target
 document.body.onload = boxAdapt(); //modify tip text based on screen width
+//add listener to expand images on click
 document.body.onload = function() {
   var elems = document.images, len = elems.length, i = undefined;
   for (i = 0; i < len; i++) {
-    if (elems[i].className === "exp") elems[i].addEventListener("click", expand);
+    if (elems[i].className === "exp") {
+      elems[i].addEventListener("click", expand);
+      elems[i].sizes = "(max-width: 768px) 30vw, 15vw";
+    }
   }
 }
 //clickable boxes
