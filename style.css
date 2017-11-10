@@ -75,9 +75,6 @@ progress {
   width: 50%;
   height: 11in;
 }
-.exp::after {
-  content: "Click to expand.";
-}
 /*tablet profile*/
 @media (min-width: 768px) and (max-width: 1024px) {
   .box {width: calc(50% - 23px)}

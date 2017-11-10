@@ -1,14 +1,28 @@
 "use strict";
-document.body.onload = setLinks(); //set class based on href and add appropriate target
-document.body.onload = boxAdapt(); //modify tip text based on screen width
-//add listener to expand images on click
+//modify box tip text based on screen width
 document.body.onload = function() {
-  var elems = document.images, len = elems.length, i = undefined;
+  var tip = document.getElementById("boxTip"), str = "each box to view the full list.";
+  if (tip !== null) {
+    if (screen.width <= 768) tip.innerHTML = "Tap " + str;
+    else if (screen.width <= 1024) tip.innerHTML = "Click/tap " + str;
+    else tip.innerHTML = "Click " + str;
+  }
+}
+document.body.onload = function() {
+  //set link class based on href and add appropriate target
+  var elems = document.links, len = elems.length, i = undefined;
   for (i = 0; i < len; i++) {
-    if (elems[i].className === "exp") {
-      elems[i].addEventListener("click", expand);
-      elems[i].sizes = "(max-width: 768px) 30vw, 15vw";
-    }
+    if (elems[i].href.includes(document.domain)) elems[i].className = "int";
+    else elems[i].className = "ext";
+  }
+  elems = document.getElementsByClassName("ext");
+  len = elems.length;
+  for (i = 0; i < len; i++) elems[i].target = "_blank";
+  //add listener to expand images on click
+  elems = document.images;
+  len = elems.length;
+  for (i = 0; i < len; i++) {
+    if (elems[i].className === "exp") elems[i].addEventListener("click", expand);
   }
 }
 //clickable boxes
@@ -34,24 +48,6 @@ document.body.onkeydown = ev => {
       document.getElementById("top").srcset = "img/tiger.png 1280w";
     }
   } else pos = 0;
-}
-function setLinks() {
-  var elems = document.links, len = elems.length, i = undefined;
-  for (i = 0; i < len; i++) {
-    if (elems[i].href.includes(document.domain)) elems[i].className = "int";
-    else elems[i].className = "ext";
-  }
-  elems = document.getElementsByClassName("ext");
-  len = elems.length;
-  for (i = 0; i < len; i++) elems[i].target = "_blank";
-}
-function boxAdapt() {
-  var tip = document.getElementById("boxTip"), str = "each box to view the full list.";
-  if (tip !== null) {
-    if (screen.width <= 768) tip.innerHTML = "Tap " + str;
-    else if (screen.width <= 1024) tip.innerHTML = "Click/tap " + str;
-    else tip.innerHTML = "Click " + str;
-  }
 }
 function selectBox(elem) {
   elem.style.overflow = "auto";
