@@ -1,16 +1,13 @@
 "use strict";
-//modify box tip text based on screen width
 document.body.onload = function() {
   var tip = document.getElementById("boxTip"), str = "each box to view the full list.";
-  if (tip !== null) {
-    if (screen.width <= 768) tip.innerHTML = "Tap " + str;
-    else if (screen.width <= 1024) tip.innerHTML = "Click/tap " + str;
+  var elems = document.links, len = elems.length, i = undefined;
+  //modify box tip text based on screen width
+  if (tip !== null && tip !== undefined) {
+    if (screen.width <= 1024) tip.innerHTML = "Tap " + str;
     else tip.innerHTML = "Click " + str;
   }
-}
-document.body.onload = function() {
   //set link class based on href and add appropriate target
-  var elems = document.links, len = elems.length, i = undefined;
   for (i = 0; i < len; i++) {
     if (elems[i].href.includes(document.domain)) elems[i].className = "int";
     else elems[i].className = "ext";
@@ -22,7 +19,10 @@ document.body.onload = function() {
   elems = document.images;
   len = elems.length;
   for (i = 0; i < len; i++) {
-    if (elems[i].className === "exp") elems[i].addEventListener("click", expand);
+    if (screen.width > 1024 && elems[i].className === "exp") {
+      elems[i].addEventListener("click", expand);
+      elems[i].title = "Click to expand.";
+    }
   }
 }
 //clickable boxes
@@ -59,16 +59,14 @@ function resetBox(elem) {
 }
 function expand(ev) {
   var size = ev.target.sizes;
-  if (screen.width >= 768) {
-    switch(size) {
-      case "90vw":
-        ev.target.sizes = "(max-width: 768px) 30vw, 15vw";
-        break;
-      case "(max-width: 768px) 30vw, 15vw":
-        ev.target.sizes = "90vw";
-        break;
-      default:
-        break;
-    }
+  switch(size) {
+    case "90vw":
+      ev.target.sizes = "(max-width: 768px) 30vw, 15vw";
+      break;
+    case "(max-width: 768px) 30vw, 15vw":
+      ev.target.sizes = "90vw";
+      break;
+    default:
+      break;
   }
 }
