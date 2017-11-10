@@ -58,13 +58,15 @@ function resetBox(elem) {
   elem.style.border = "3px dashed gray";
 }
 function expand(ev) {
-  var size = ev.target.sizes;
-  switch(size) {
+  var elem = ev.target;
+  switch(elem.sizes) {
     case "90vw":
-      ev.target.sizes = "(max-width: 768px) 30vw, 15vw";
+      elem.sizes = "(max-width: 768px) 30vw, 15vw";
+      elem.title = "Click to expand."
       break;
     case "(max-width: 768px) 30vw, 15vw":
-      ev.target.sizes = "90vw";
+      elem.sizes = "90vw";
+      elem.title = "Click to shrink.";
       break;
     default:
       break;
