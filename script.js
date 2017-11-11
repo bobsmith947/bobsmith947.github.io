@@ -1,8 +1,4 @@
 "use strict";
-//alert user of old browser
-window.onerror = function() {
-  window.alert("Your browser is outdated! Please update otherwise some features will not work!");
-}
 document.body.onload = () => {
   var tip = document.getElementById("boxTip"), str = "each box to view the full list.";
   var elems = document.links, len = elems.length, i = undefined;

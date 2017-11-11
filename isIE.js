@@ -1,3 +1,8 @@
+//alert user of old browser
+window.onerror = function() {
+  window.alert("Your browser is outdated! Please update otherwise some features will not work!");
+}
+
 // Forked from https://codepen.io/gapcode/pen/vEJNZN
 
 var version = detectIE();
