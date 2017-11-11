@@ -45,7 +45,7 @@ document.body.onkeydown = ev => {
     pos++;
     if(pos >= keys.length) {
       pos = 0;
-      document.getElementById("top").srcset = "img/tiger.png 1280w";
+      document.getElementById("top").src = "img/tiger.png";
     }
   } else pos = 0;
 }
@@ -59,13 +59,13 @@ function resetBox(elem) {
 }
 function expandImg(ev) {
   var elem = ev.target;
-  switch(elem.sizes) {
-    case "90vw":
-      elem.sizes = "(max-width: 768px) 30vw, 15vw";
+  switch(elem.style.width) {
+    case "90%":
+      elem.style.width = "15%";
       elem.title = "Click to expand."
       break;
-    case "(max-width: 768px) 30vw, 15vw":
-      elem.sizes = "90vw";
+    case "15%":
+      elem.style.width = "90%";
       elem.title = "Click to shrink.";
       break;
     default:
