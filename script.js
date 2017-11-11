@@ -1,4 +1,6 @@
 "use strict";
+//alert user of old browser
+document.getElementById("top").addEventListener("error", function(){window.alert("Your browser is outdated! Please update otherwise some features will not work!")});
 document.body.onload = () => {
   var tip = document.getElementById("boxTip"), str = "each box to view the full list.";
   var elems = document.links, len = elems.length, i = undefined;
@@ -19,7 +21,6 @@ document.body.onload = () => {
   elems = document.images;
   len = elems.length;
   for (i = 0; i < len; i++) {
-    //elems[i].addEventListener("error", window.alert("Your browser doesn't support HTML5! Some features will not work."))
     if (screen.width > 1024 && elems[i].className === "exp") {
       elems[i].addEventListener("click", expandImg);
       elems[i].title = "Click to expand.";
