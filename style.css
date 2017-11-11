@@ -75,6 +75,8 @@ progress {
   width: 50%;
   height: 11in;
 }
+.exp {width: 15%}
+#top {width: 25%}
 /*tablet profile*/
 @media (min-width: 768px) and (max-width: 1024px) {
   .box {width: calc(50% - 23px)}
@@ -82,6 +84,8 @@ progress {
     width: 75%;
     height: 5.5in;
   }
+  .exp {width: 20%}
+  #top {width: 30%}
 }
 /*mobile profile*/
 @media (max-width: 767px) {
@@ -102,4 +106,6 @@ progress {
     margin-left: -40px;
     width: auto;
   }
+  .exp {width: 40%}
+  #top {width: 50%}
 }
