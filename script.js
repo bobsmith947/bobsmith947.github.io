@@ -1,13 +1,17 @@
 "use strict";
 document.body.onload = () => {
-  var tip = document.getElementById("boxTip"), str = "each box to view the full list.";
-  var elems = document.links, len = elems.length, i = undefined;
-  //modify box tip text based on screen width
-  if (tip !== null && tip !== undefined) {
-    if (screen.width <= 1024) tip.innerHTML = "Tap " + str;
-    else tip.innerHTML = "Click " + str;
+  var elems = document.getElementsByClassName("boxTip"), len = elems.length;
+  var str = "each box to view the full list.", i = undefined;
+  //modify tip text based on screen width
+  for (i = 0; i < len; i++) {
+    if (elems[i] !== null && elems[i] !== undefined) {
+      if (screen.width <= 1024) elems[i].innerHTML = "Tap " + str;
+      else elems[i].innerHTML = "Click " + str;
+    }
   }
   //set link class based on href and add appropriate target
+  elems = document.links;
+  len = elems.length;
   for (i = 0; i < len; i++) {
     if (elems[i].href.includes(document.domain)) elems[i].className = "int";
     else elems[i].className = "ext";
@@ -22,6 +26,7 @@ document.body.onload = () => {
     if (screen.width > 1024 && elems[i].className === "exp") {
       elems[i].addEventListener("click", expandImg);
       elems[i].title = "Click to expand.";
+      elems[i].style.width = "15%";
     }
   }
 }
@@ -29,7 +34,7 @@ document.body.onload = () => {
 var prev = undefined;
 document.body.onclick = ev => {
   var tar = ev.target;
-  if (prev !== undefined) {
+  if (prev !== undefined && prev !== null) {
     if (prev.parentElement.className === "box") resetBox(prev.parentElement);
     else if (prev.className === "box") resetBox(prev);
   }
