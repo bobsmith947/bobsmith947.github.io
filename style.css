@@ -63,6 +63,7 @@ progress {
   width: calc((100% / 3) - 24px);
   border: 3px dashed gray;
   overflow: hidden;
+  position: relative;
 }
 .lst {
   margin: auto;
