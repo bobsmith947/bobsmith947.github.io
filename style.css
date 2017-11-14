@@ -38,9 +38,21 @@ noscript {
   padding-bottom: 10px;
 }
 progress {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
   display: block;
   margin: 15px auto;
   width: 50%;
+}
+::-webkit-progress-bar {
+  color: gray;
+}
+::-webkit-progress-value {
+  color: green;
+}
+::-moz-progress-bar {
+  color: green;
 }
 .ext:link {color: blue}
 .ext:visited {color: green}
@@ -89,8 +101,8 @@ progress {
 /*tablet profile*/
 @media (min-width: 768px) and (max-width: 1024px) {
   .box {
-    flex: 0 0 40%;
     /*width: calc(50% - 23px)*/
+    
   }
   .doc {
     width: 75%;
