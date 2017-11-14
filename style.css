@@ -56,14 +56,23 @@ progress {
   margin: 0 -5px;
 }
 .int:hover {background-color: #111}
+.box-container {
+  height: 600px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: space-between;
+}
 .box {
-  display: inline-block;
-  padding: 6px;
-  height: 250px;
+  /*display: inline-block;
   width: calc((100% / 3) - 24px);
+  position: relative;*/
+  flex: 0 0 30%;
+  height: 250px;
+  padding: 6px;
+  margin: auto;
   border: 3px dashed gray;
   overflow: hidden;
-  position: relative;
 }
 .lst {
   margin: auto;
@@ -79,7 +88,9 @@ progress {
 #top {width: 25%}
 /*tablet profile*/
 @media (min-width: 768px) and (max-width: 1024px) {
-  .box {width: calc(50% - 23px)}
+  .box {
+    /*width: calc(50% - 23px)*/
+  }
   .doc {
     width: 75%;
     height: 5.5in;
@@ -89,6 +100,24 @@ progress {
 }
 /*mobile profile*/
 @media (max-width: 767px) {
+  .lst {
+    /*margin-left: -40px;*/
+  }
+  .doc {
+    width: 100%;
+    height: 4.5in;
+  }
+  .box-container {
+    height: auto;
+  }
+  .box {
+    /*width: calc(100% - 18px)*/
+    flex: 0 0 90%;
+  }
+  .exp {width: 40%}
+  #top {width: 50%}
+}
+@media (max-width: 1024px) {
   body {
   margin-left: 8%;
   margin-right: 8%;
@@ -97,15 +126,5 @@ progress {
   margin: auto;
   text-indent: 25px;
   }
-  .doc {
-    width: 100%;
-    height: 4.5in;
-  }
-  .box {width: calc(100% - 18px)}
-  .lst {
-    margin-left: -40px;
-    width: auto;
-  }
-  .exp {width: 40%}
-  #top {width: 50%}
+  .lst {width: auto}
 }
