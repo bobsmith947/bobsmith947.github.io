@@ -46,13 +46,19 @@ progress {
   width: 50%;
 }
 ::-webkit-progress-bar {
-  color: gray;
+  /*background-color: gray;*/
 }
 ::-webkit-progress-value {
-  color: green;
+  /*background-color: green;*/
+}
+::-webkit-progress-inner-element {
+  /*border: 2px solid black;*/
 }
 ::-moz-progress-bar {
-  color: green;
+  background-color: green;
+}
+::-ms-fill {
+  background-color: green;
 }
 .ext:link {color: blue}
 .ext:visited {color: green}
@@ -102,7 +108,7 @@ progress {
 @media (min-width: 768px) and (max-width: 1024px) {
   .box {
     /*width: calc(50% - 23px)*/
-    
+    flex: 0 0 40%;
   }
   .doc {
     width: 75%;
