@@ -38,9 +38,27 @@ noscript {
   padding-bottom: 10px;
 }
 progress {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
   display: block;
   margin: 15px auto;
   width: 50%;
+}
+::-webkit-progress-bar {
+  /*background-color: gray;*/
+}
+::-webkit-progress-value {
+  /*background-color: green;*/
+}
+::-webkit-progress-inner-element {
+  /*border: 2px solid black;*/
+}
+::-moz-progress-bar {
+  background-color: green;
+}
+::-ms-fill {
+  background-color: green;
 }
 .ext:link {color: blue}
 .ext:visited {color: green}
@@ -90,13 +108,15 @@ progress {
 @media (min-width: 768px) and (max-width: 1024px) {
   .box {
     /*width: calc(50% - 23px)*/
+    flex: 0 0 40%;
   }
+  .box-container {height: 900px}
   .doc {
     width: 75%;
     height: 5.5in;
   }
-  .exp {width: 20%}
-  #top {width: 30%}
+  .exp {width: 30%}
+  #top {width: 50%}
 }
 /*mobile profile*/
 @media (max-width: 767px) {
@@ -108,14 +128,14 @@ progress {
     height: 4.5in;
   }
   .box-container {
-    height: auto;
+    height: 1800px;
   }
   .box {
     /*width: calc(100% - 18px)*/
     flex: 0 0 90%;
   }
-  .exp {width: 40%}
-  #top {width: 50%}
+  .exp {width: 45%}
+  #top {width: 75%}
 }
 @media (max-width: 1024px) {
   body {
