@@ -65,15 +65,13 @@ function resetBox(elem) {
 function expandImg(ev) {
   var elem = ev.target;
   switch(elem.style.width) {
-    case "90%":
+    case "15%" :
+      elem.style.width = elem.naturalWidth + "px";
+      elem.title = "Click to shrink."
+      break;
+    default :
       elem.style.width = "15%";
-      elem.title = "Click to expand."
-      break;
-    case "15%":
-      elem.style.width = "90%";
-      elem.title = "Click to shrink.";
-      break;
-    default:
+      elem.title = "Click to expand.";
       break;
   }
 }
