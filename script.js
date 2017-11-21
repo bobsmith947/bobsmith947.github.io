@@ -71,7 +71,7 @@ function expandImg(ev) {
   var elem = ev.target, w = elem.naturalWidth;
   switch(elem.style.width) {
     case "15%" :
-      if (w > screen.width) elem.style.width = "90%";
+      if (w > 0.9 * screen.width) elem.style.width = "90%";
       else elem.style.width = w + "px";
       elem.title = "Click to shrink."
       break;
