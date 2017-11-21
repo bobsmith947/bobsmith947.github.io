@@ -1,8 +1,8 @@
 "use strict";
 document.body.onload = () => {
-  var elems = document.getElementsByClassName("boxTip"), len = elems.length;
-  var str = "each box to view the full list.", i = undefined;
+  var elems = document.getElementsByClassName("boxTip"), len = elems.length, i = undefined;
   //modify tip text based on screen width
+  var str = "each box to view the full list."
   for (i = 0; i < len; i++) {
     if (elems[i] !== null && elems[i] !== undefined) {
       if (screen.width <= 1024) elems[i].innerHTML = "Tap " + str;
@@ -29,6 +29,11 @@ document.body.onload = () => {
       elems[i].style.width = "15%";
     }
   }
+  //set progress bar value
+  var vals = ["50", "50", "0", "0", "0", "0", "0", "0", "0"];
+  elems = document.querySelectorAll("progress[value]");
+  len = elems.length;
+  for (i = 0; i < len; i++) elems[i].value = vals[i];
 }
 //clickable boxes
 var prev = undefined;
@@ -63,17 +68,16 @@ function resetBox(elem) {
   elem.style.border = "3px dashed gray";
 }
 function expandImg(ev) {
-  var elem = ev.target;
+  var elem = ev.target, w = elem.naturalWidth;
   switch(elem.style.width) {
-    case "90%":
+    case "15%" :
+      if (w > 0.9 * screen.width) elem.style.width = "90%";
+      else elem.style.width = w + "px";
+      elem.title = "Click to shrink."
+      break;
+    default :
       elem.style.width = "15%";
-      elem.title = "Click to expand."
-      break;
-    case "15%":
-      elem.style.width = "90%";
-      elem.title = "Click to shrink.";
-      break;
-    default:
+      elem.title = "Click to expand.";
       break;
   }
 }

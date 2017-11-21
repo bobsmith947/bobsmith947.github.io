@@ -2,15 +2,12 @@
 window.onerror = function() {
   window.alert("Your browser is outdated! Please update otherwise some features will not work!");
 }
-
-// Forked from https://codepen.io/gapcode/pen/vEJNZN
-
-var version = detectIE();
-if (version) {
+if (detectIE()) {
   window.alert("Please don't use Internet Explorer! The site will not work!");
   window.open("https://www.google.com/chrome/browser/desktop/index.html", "_self");
 }
 
+// Forked from https://codepen.io/gapcode/pen/vEJNZN
 function detectIE() {
   var ua = window.navigator.userAgent;
 
