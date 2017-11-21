@@ -46,29 +46,28 @@ progress {
   width: 50%;
 }
 ::-webkit-progress-bar {
-  /*background-color: gray;*/
+  background-color: #E6E6E6
 }
 ::-webkit-progress-value {
   /*background-color: green;*/
-  transition: width 1s;
+  transition-duration: 1s;
 }
 ::-webkit-progress-inner-element {
   /*border: 2px solid black;*/
 }
 ::-moz-progress-bar {
   background-color: green;
-  transition: width 1s;
+  transition-duration: 1s;
 }
 ::-ms-fill {
   background-color: green;
-  transition: width 1s;
+  transition-duration: 1s;
 }
 .ext {transition: color 0.25s}
 .ext:link {color: blue}
 .ext:visited {color: green}
 .ext:hover {color: red}
 .ext:active {color: black}
-.int {transition: background-color 0.5s}
 .int {
   display: inline-block;
   text-decoration: none;
@@ -77,6 +76,7 @@ progress {
   background-color: #333;
   padding: 8px;
   margin: 0 -5px;
+  transition: background-color 0.5s
 }
 .int:hover {background-color: #111}
 .box-container {
