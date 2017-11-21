@@ -50,20 +50,25 @@ progress {
 }
 ::-webkit-progress-value {
   /*background-color: green;*/
+  transition: width 1s;
 }
 ::-webkit-progress-inner-element {
   /*border: 2px solid black;*/
 }
 ::-moz-progress-bar {
   background-color: green;
+  transition: width 1s;
 }
 ::-ms-fill {
   background-color: green;
+  transition: width 1s;
 }
+.ext {transition: color 0.25s}
 .ext:link {color: blue}
 .ext:visited {color: green}
 .ext:hover {color: red}
 .ext:active {color: black}
+.int {transition: background-color 0.5s}
 .int {
   display: inline-block;
   text-decoration: none;
@@ -102,7 +107,10 @@ progress {
   width: 50%;
   height: 11in;
 }
-.exp {width: 15%}
+.exp {
+  width: 15%;
+  transition: width 1s;
+}
 #top {width: 25%}
 /*tablet profile*/
 @media (min-width: 768px) and (max-width: 1024px) {
