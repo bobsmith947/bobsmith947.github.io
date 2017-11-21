@@ -63,10 +63,11 @@ function resetBox(elem) {
   elem.style.border = "3px dashed gray";
 }
 function expandImg(ev) {
-  var elem = ev.target;
+  var elem = ev.target, w = elem.naturalWidth;
   switch(elem.style.width) {
     case "15%" :
-      elem.style.width = elem.naturalWidth + "px";
+      if (w > screen.width) elem.style.width = "90%";
+      else elem.style.width = w + "px";
       elem.title = "Click to shrink."
       break;
     default :
