@@ -1,8 +1,8 @@
 "use strict";
 document.body.onload = () => {
-  var elems = document.getElementsByClassName("boxTip"), len = elems.length;
-  var str = "each box to view the full list.", i = undefined;
+  var elems = document.getElementsByClassName("boxTip"), len = elems.length, i = undefined;
   //modify tip text based on screen width
+  var str = "each box to view the full list."
   for (i = 0; i < len; i++) {
     if (elems[i] !== null && elems[i] !== undefined) {
       if (screen.width <= 1024) elems[i].innerHTML = "Tap " + str;
@@ -29,6 +29,11 @@ document.body.onload = () => {
       elems[i].style.width = "15%";
     }
   }
+  //set progress bar value
+  var vals = ["50", "50", "0", "0", "0", "0", "0", "0", "0"];
+  elems = document.querySelectorAll("progress[value]");
+  len = elems.length;
+  for (i = 0; i < len; i++) elems[i].value = vals[i];
 }
 //clickable boxes
 var prev = undefined;
