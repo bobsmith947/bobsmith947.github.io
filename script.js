@@ -30,7 +30,7 @@ document.body.onload = () => {
     }
   }
   //set progress bar value
-  var vals = ["50", "50", "0", "0", "0", "0", "0", "0", "0"];
+  var vals = ["50", "50", "5", "0", "0", "0", "0", "0", "0"];
   elems = document.querySelectorAll("progress[value]");
   len = elems.length;
   for (i = 0; i < len; i++) elems[i].value = vals[i];
