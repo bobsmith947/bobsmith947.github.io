@@ -1,24 +1,14 @@
 "use strict";
 document.body.onload = () => {
-  var elems = document.getElementsByClassName("boxTip"), len = elems.length, i = undefined;
-  //modify tip text based on screen width
-  var str = "each box to view the full list."
-  for (i = 0; i < len; i++) {
-    if (elems[i] !== null && elems[i] !== undefined) {
-      if (screen.width <= 1024) elems[i].innerHTML = "Tap " + str;
-      else elems[i].innerHTML = "Click " + str;
-    }
-  }
+  var elems = document.links, len = elems.length, i = undefined;
   //set link class based on href and add appropriate target
-  elems = document.links;
-  len = elems.length;
   for (i = 0; i < len; i++) {
     if (elems[i].href.includes(document.domain)) elems[i].className = "int";
-    else elems[i].className = "ext";
+    else {
+      elems[i].className = "ext";
+      elems[i].target = "_blank";
+    }
   }
-  elems = document.getElementsByClassName("ext");
-  len = elems.length;
-  for (i = 0; i < len; i++) elems[i].target = "_blank";
   //add listener to expand images on click
   elems = document.images;
   len = elems.length;
@@ -27,6 +17,16 @@ document.body.onload = () => {
       elems[i].addEventListener("click", expandImg);
       elems[i].title = "Click to expand.";
       elems[i].style.width = "15%";
+    }
+  }
+  //modify tip text based on screen width
+  var str = "each box to view the full list."
+  elems = document.getElementsByClassName("boxTip");
+  len = elems.length;
+  for (i = 0; i < len; i++) {
+    if (elems[i] !== null && elems[i] !== undefined) {
+      if (screen.width <= 1024) elems[i].innerHTML = "Tap " + str;
+      else elems[i].innerHTML = "Click " + str;
     }
   }
   //set progress bar value

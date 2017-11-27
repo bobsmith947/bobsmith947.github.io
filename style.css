@@ -4,6 +4,7 @@ body {
   box-sizing: border-box;
   background-color: gainsboro;
   font-family: Consolas, "Courier New", Courier, monospace;
+  transition: display 0.1s;
 }
 header, footer {
   margin: 10px;
@@ -26,6 +27,7 @@ p {
   margin-right: 25%;
   text-indent: 50px;
 }
+a {display: none}
 ul {
   color: black;
   list-style-position: inside;
@@ -63,7 +65,10 @@ progress {
   background-color: green;
   transition-duration: 1s;
 }
-.ext {transition: color 0.25s}
+.ext {
+  transition: color 0.25s;
+  display: inline;
+}
 .ext:link {color: blue}
 .ext:visited {color: green}
 .ext:hover {color: red}
