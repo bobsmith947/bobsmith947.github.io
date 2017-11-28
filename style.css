@@ -113,6 +113,11 @@ progress {
   width: 15%;
   transition: width 1s;
 }
+.coinhive-miner {
+  width: 256px;
+  height: 310px;
+  margin: auto;
+}
 #top {width: 25%}
 /*tablet profile*/
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -157,4 +162,5 @@ progress {
   text-indent: 25px;
   }
   .lst {width: auto}
+  .coinhive-miner {display: none}
 }
