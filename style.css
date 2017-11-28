@@ -4,6 +4,7 @@ body {
   box-sizing: border-box;
   background-color: gainsboro;
   font-family: Consolas, "Courier New", Courier, monospace;
+  /*transition: display 0.25s;*/
 }
 header, footer {
   margin: 10px;
@@ -26,6 +27,7 @@ p {
   margin-right: 25%;
   text-indent: 50px;
 }
+a {color: inherit}
 ul {
   color: black;
   list-style-position: inside;
