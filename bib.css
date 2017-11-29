@@ -1,0 +1,19 @@
+.blank {
+  background-color: white;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  margin: 1in;
+}
+.mla8 {
+  line-height: 2em;
+  font-size: 1em;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}
+.header {
+  text-align: center;
+}
+.hang {
+  margin-left: 0.5in;
+  text-indent: -0.5in;
+}
