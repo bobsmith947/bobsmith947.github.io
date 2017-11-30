@@ -1,10 +1,15 @@
+@charset "UTF-8";
 .blank {
-  background-color: white;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  margin: 1in;
 }
 .mla8 {
+  width: 50%;
+  height: 11in;
+  overflow: auto;
+  background-color: white;
+  padding: 1in;
+  margin: auto;
   line-height: 2em;
   font-size: 1em;
   font-family: "Times New Roman", Times, serif;
@@ -16,4 +21,15 @@
 .hang {
   margin-left: 0.5in;
   text-indent: -0.5in;
+}
+@media (max-width: 1024px) {
+  .mla8 {
+    width: 75%;
+    height: 5.5in;
+    padding: 0.5in;
+  }
+  .hang {
+    margin-left: 0.25in;
+    text-indent: 0.25in;
+  }
 }
