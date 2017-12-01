@@ -114,7 +114,7 @@ progress {
 }
 .coinhive-miner {
   width: 50%;
-  height: 250px;
+  height: 310px;
   margin: auto;
 }
 #top {width: 25%}
@@ -137,7 +137,7 @@ progress {
     /*margin-left: -40px;*/
   }
   .doc {
-    width: 100%;
+    width: 90%;
     height: 4.5in;
   }
   .box {

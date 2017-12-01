@@ -1,12 +1,14 @@
 @charset "UTF-8";
-.mla8 {
+.paper {
   overflow: auto;
   background-color: white;
+  color: black;
+}
+.mla {
   padding: 1in;
   line-height: 2em;
   font-size: 1em;
   font-family: "Times New Roman", Times, serif;
-  color: black;
 }
 .header {text-align: center}
 .hang {
