@@ -3,7 +3,7 @@ document.body.onload = () => {
   var elems = document.links, len = elems.length, i = undefined;
   //set link class based on href and add appropriate target
   for (i = 0; i < len; i++) {
-    if (elems[i].href.includes(document.domain)) elems[i].className = "int";
+    if (elems[i].href.includes("http://" + document.domain)) elems[i].className = "int";
     else {
       elems[i].className = "ext";
       elems[i].target = "_blank";
