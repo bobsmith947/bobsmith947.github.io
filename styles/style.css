@@ -102,7 +102,7 @@ progress {
 }
 .coinhive-miner {
   width: 50%;
-  height: 310px;
+  height: 0px;
   margin: auto;
 }
 #top {width: 25%}
