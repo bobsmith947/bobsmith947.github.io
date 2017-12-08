@@ -25,15 +25,18 @@ document.body.onload = () => {
   len = elems.length;
   for (i = 0; i < len; i++) {
     if (elems[i] !== null && elems[i] !== undefined) {
-      if (screen.width <= 1024) elems[i].innerHTML = "Tap " + str;
-      else elems[i].innerHTML = "Click " + str;
+      if (screen.width <= 1024) elems[i].innerHTML = `Tap ${str}`;
+      else elems[i].innerHTML = `Click ${str}`;
     }
   }
   //set progress bar value
-  var vals = ["100", "50", "5", "10", "0", "0", "0", "0"];
+  var vals = ["100", "75", "5", "10", "0", "0", "0", "0"];
   elems = document.querySelectorAll("progress[value]");
   len = elems.length;
-  for (i = 0; i < len; i++) elems[i].value = vals[i];
+  for (i = 0; i < len; i++) {
+    elems[i].value = vals[i];
+    elems[i].innerHTML = `Progress: ${vals[i]}%`;
+  }
 }
 //clickable boxes
 var prev = undefined;
