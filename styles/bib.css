@@ -16,7 +16,7 @@
   text-indent: -0.5in;
 }
 @media (max-width: 1024px) {
-  .mla {padding: 0.5in}
+  .mla {padding: 0in}
   .hang {
     margin-left: 0.25in;
     text-indent: -0.25in;
