@@ -1,9 +1,8 @@
-"use strict";
 document.body.onload = () => {
   var elems = document.links, len = elems.length, i = undefined;
   //set link class based on href and add appropriate target
   for (i = 0; i < len; i++) {
-    if (elems[i].href.includes("http://" + document.domain)) elems[i].className = "int";
+    if (elems[i].href.includes(document.domain)) elems[i].className = "int";
     else {
       elems[i].className = "ext";
       elems[i].target = "_blank";
@@ -75,7 +74,7 @@ function expandImg(ev) {
   switch(elem.style.width) {
     case "15%" :
       if (w > 0.9 * screen.width) elem.style.width = "90%";
-      else elem.style.width = w + "px";
+      else elem.style.width = `${w}px`;
       elem.title = "Click to shrink."
       break;
     default :

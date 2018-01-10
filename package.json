@@ -2,9 +2,12 @@
   "name": "bobsmith947.github.io",
   "version": "1.0.0",
   "description": "Granular Software project website.",
-  "main": "index.js",
+  "main": "scripts/script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress -p",
+    "watch": "webpack --progress --watch",
+    "optimize": "oxipng -o 4 -s ./img/"
   },
   "repository": {
     "type": "git",

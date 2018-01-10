@@ -1,4 +1,3 @@
-"use strict";
 document.getElementById("mine").onerror = () => {
   var miner = document.querySelector(".coinhive-miner");
   miner.innerHTML = "Please allow scripts from authedmine.com.";
