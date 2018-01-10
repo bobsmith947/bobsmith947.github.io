@@ -5,8 +5,8 @@
   "main": "scripts/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --progress -p",
-    "watch": "webpack --progress --watch",
+    "build": "babel ./scripts/script.js -o ./scripts/tp.js --presets=env,minify",
+    "watch": "babel ./scripts/script.js -o ./scripts/tp.js --presets=env,minify -w",
     "optimize": "oxipng -o 4 -s ./img/"
   },
   "repository": {
@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/bobsmith947/bobsmith947.github.io#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "webpack": "^3.10.0"
+    "babel-preset-minify": "^0.2.0"
   }
 }
