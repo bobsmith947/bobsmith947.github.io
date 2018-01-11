@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel ./scripts/script.js -o ./scripts/tp.js --presets=env,minify",
     "watch": "babel ./scripts/script.js -o ./scripts/tp.js --presets=env,minify -w",
-    "optimize": "for %f in (./img/*.png) do oxipng.exe -o 4 -s \"./img/%f\""
+    "optimize": "for %f in (./img/*.png) do oxipng -o 4 -s \"./img/%f\""
   },
   "repository": {
     "type": "git",
