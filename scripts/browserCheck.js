@@ -1,10 +1,27 @@
 //alert user of old browser
-window.onerror = function() {
+/*window.onerror = function() {
   window.alert("Your browser is outdated! Please update otherwise some features will not work!");
-}
+};*/
+
 if (detectIE()) {
-  window.alert("Please don't use Internet Explorer! The site will not work!");
-  window.open("https://www.google.com/chrome/browser/desktop/index.html", "_self");
+  window.alert("Your browser has been detected to be Internet Explorer. The layout may appear broken. It is recommended to switch to a newer browser.")
+  //window.alert("Please don't use Internet Explorer! The site will not work!");
+  //window.open("https://www.google.com/chrome/browser/desktop/index.html", "_self");
+}
+
+if (!String.prototype.includes) {
+  String.prototype.includes = function(search, start) {
+    'use strict';
+    if (typeof start !== 'number') {
+      start = 0;
+    }
+    
+    if (start + search.length > this.length) {
+      return false;
+    } else {
+      return this.indexOf(search, start) !== -1;
+    }
+  };
 }
 
 // Forked from https://codepen.io/gapcode/pen/vEJNZN
