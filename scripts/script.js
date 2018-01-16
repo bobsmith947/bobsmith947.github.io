@@ -1,5 +1,5 @@
 document.body.onload = () => {
-  var elems = document.links, len = elems.length, i = undefined;
+  let elems = document.links, len = elems.length, i = undefined;
   //set link class based on href and add appropriate target
   for (i = 0; i < len; i++) {
     if (elems[i].href.includes(`://${document.domain}`)) elems[i].className = "int";
@@ -19,7 +19,7 @@ document.body.onload = () => {
     }
   }
   //modify tip text based on screen width
-  var str = "each box to view the full list."
+  const str = "each box to view the full list."
   elems = document.getElementsByClassName("boxTip");
   len = elems.length;
   for (i = 0; i < len; i++) {
@@ -29,7 +29,7 @@ document.body.onload = () => {
     }
   }
   //set progress bar value
-  var vals = ["100", "75", "5", "1", "0", "0", "0"];
+  const vals = ["100", "75", "5", "1", "0", "0", "0"];
   elems = document.querySelectorAll("progress[value]");
   len = elems.length;
   for (i = 0; i < len; i++) {
@@ -40,7 +40,7 @@ document.body.onload = () => {
 //clickable boxes
 var prev = undefined;
 document.body.onclick = ev => {
-  var tar = ev.target;
+  const tar = ev.target;
   if (prev !== undefined && prev !== null) {
     if (prev.parentElement.className === "box") resetBox(prev.parentElement);
     else if (prev.className === "box") resetBox(prev);
@@ -52,7 +52,7 @@ document.body.onclick = ev => {
 //konami code easter egg
 var keys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65], pos = 0;
 document.body.onkeydown = ev => {
-  var key = ev.keyCode;
+  const key = ev.keyCode;
   if (key === keys[pos]) {
     pos++;
     if(pos >= keys.length) {
@@ -70,7 +70,7 @@ function resetBox(elem) {
   elem.style.border = "3px dashed gray";
 }
 function expandImg(ev) {
-  var elem = ev.target, w = elem.naturalWidth;
+  const elem = ev.target, w = elem.naturalWidth;
   switch(elem.style.width) {
     case "15%" :
       if (w > 0.9 * screen.width) elem.style.width = "90%";
