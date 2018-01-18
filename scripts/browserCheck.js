@@ -1,19 +1,22 @@
 //window.onerror = window.alert("Something went wrong, you may want to look into upgrading your browser.");
-if (detectIE() === true) {
-  window.alert("Your browser has been detected to be Internet Explorer. The layout may appear broken. It is recommended to switch to a newer browser.")
+if (detectIE()) {
+  window.alert("Your browser has been detected to be Internet Explorer. The layout may appear broken. It is recommended to switch to a newer browser.");
   //window.alert("Please don't use Internet Explorer! The site will not work!");
   //window.open("https://www.google.com/chrome/browser/desktop/index.html", "_self");
 }
 
 // Taken from https://www.sitepoint.com/profiling-page-loads-with-the-navigation-timing-api/
-window.addEventListener("load", function() {
-    var timing = window.performance.timing;
-    var userTime = timing.loadEventEnd - timing.navigationStart;
-    var dns = timing.domainLookupEnd - timing.domainLookupStart;
-    var connection = timing.connectEnd - timing.connectStart;
-    var requestTime = timing.responseEnd - timing.requestStart;
-    var fetchTime = timing.responseEnd - timing.fetchStart;
+if (window.performance && window.performance.timing) {
+    window.addEventListener("load", function() {
+        var timing = window.performance.timing;
+        var user = timing.loadEventEnd - timing.navigationStart;
+        var dns = timing.domainLookupEnd - timing.domainLookupStart;
+        var conn = timing.connectEnd - timing.connectStart;
+        var req = timing.responseEnd - timing.requestStart;
+        var fetch = timing.responseEnd - timing.fetchStart;
+        console.log(user + " " + dns + " " + conn + " " + req + " " + fetch);
 });
+}
 
 // Taken from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
 if (!String.prototype.includes) {
