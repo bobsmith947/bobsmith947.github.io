@@ -71,9 +71,13 @@ progress {
   transition: background-color 0.5s
 }
 .int:hover {background-color: #111}
-.box-container {
-  height: auto;
-  float: left;
+@supports (display: -webkit-flex) or (display: -moz-flex) {
+  .box-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    align-content: space-between;
+  }
 }
 .box {
   height: 250px;
@@ -82,15 +86,6 @@ progress {
   margin: 3px auto;
   border: 3px dashed gray;
   overflow: hidden;
-}
-@supports (display: -webkit-flex) or (display: -moz-flex) {
-  .box-container {
-    display: flex;
-    float: none;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    align-content: space-between;
-  }
 }
 .lst {
   margin: auto;
