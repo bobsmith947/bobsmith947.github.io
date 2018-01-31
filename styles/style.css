@@ -73,19 +73,24 @@ progress {
 .int:hover {background-color: #111}
 .box-container {
   height: auto;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
-  align-content: space-between;
+  float: left;
 }
 .box {
-  flex: 0 0 33%;
-  -ms-flex: 0 0 30%;
   height: 250px;
+  width: 33%;
   padding: 6px;
   margin: 3px auto;
   border: 3px dashed gray;
   overflow: hidden;
+}
+@supports (display: -webkit-flex) or (display: -moz-flex) {
+  .box-container {
+    display: flex;
+    float: none;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    align-content: space-between;
+  }
 }
 .lst {
   margin: auto;
@@ -109,7 +114,7 @@ progress {
 #top {width: 25%}
 /*tablet profile*/
 @media (min-width: 768px) and (max-width: 1024px) {
-  .box {flex: 0 0 47%}
+  .box {width: 47%}
   .doc {
     width: 75%;
     height: 5.5in;
@@ -119,7 +124,7 @@ progress {
 }
 /*mobile profile*/
 @media (max-width: 767px) {
-  .box {flex: 0 0 100%}
+  .box {width: 100%}
   .doc {
     width: 90%;
     height: 4.5in;
