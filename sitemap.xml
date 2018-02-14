@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://recsfor.me/index.html</loc>
-    <changefreq>daily</changefreq>
+    <loc>http://recsfor.me/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
@@ -12,17 +12,22 @@
   </url>
   <url>
     <loc>http://recsfor.me/progress.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.4</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
   </url>
   <url>
     <loc>http://recsfor.me/bibliography.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>http://recsfor.me/donate.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>http://recsfor.me/javadoc/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>
