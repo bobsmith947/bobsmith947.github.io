@@ -29,7 +29,7 @@ document.body.onload = () => {
     }
   }
   //set progress bar value
-  const vals = ["100", "100", "50"];
+  const vals = ["100", "100", "100"];
   elems = document.querySelectorAll("progress[value]");
   len = elems.length;
   for (i = 0; i < len; i++) {
