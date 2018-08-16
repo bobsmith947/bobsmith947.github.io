@@ -21,11 +21,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://recsfor.me/donate.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
     <loc>http://recsfor.me/javadoc/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
