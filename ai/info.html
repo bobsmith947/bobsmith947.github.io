@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+		<script src="../scripts/solid.min.js" defer></script>
+		<script src="../scripts/fontawesome.min.js" defer></script>
+		<title>Artificial Intelligence Infographic</title>
+	</head>
+	<body>
+		<h1>How do you feel about artificial intelligence?</h1>
+		<p><i class="fas fa-brain"></i>I am knowledgeable about how AI works</p>
+		<progress></progress>
+		<p><i class="fas fa-calendar-day"></i>I am aware of how AI affects my daily life</p>
+		<progress></progress>
+		<p><i class="fas fa-id-card"></i>I am comfortable with AI using my personal data</p>
+		<progress></progress>
+		<p><i class="fas fa-users"></i>I believe that AI is beneficial to humanity</p>
+		<progress></progress>
+		<p><i class="fas fa-robot"></i>I feel threatened by AI replacing my job</p>
+		<progress></progress>
+		<p><i class="fas fa-globe"></i>I am worried about AI taking over the world</p>
+		<progress></progress>
+		<script>
+		window.setTimeout(function () {
+			var vals = ["0.5230769231", "0.4461538462", "0.4", "0.6615384615", "0.4769230769", "0.4923076923"];
+			var elems = document.getElementsByTagName("progress");
+			for (var i = 0; i < elems.length; i++) {
+				elems[i].value = vals[i];
+				elems[i].innerHTML = vals[i];
+			}
+		}, 100);
+		</script>
+	</body>
+</html>

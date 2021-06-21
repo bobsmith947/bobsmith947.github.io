@@ -43,13 +43,13 @@ progress {
 }
 ::-webkit-progress-bar {background-color: #E6E6E6}
 ::-webkit-progress-value {
-  /*background-color: green;*/
+  background-color: green;
   transition-duration: 1s;
 }
-::-webkit-progress-inner-element {/*border: 2px solid black;*/}
+::-webkit-progress-inner-element {border: 2px solid black;}
 ::-moz-progress-bar {
   background-color: green;
-  /*transition-duration: 1s;*/
+  transition-duration: 1s;
 }
 ::-ms-fill {
   background-color: green;
