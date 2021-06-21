@@ -99,11 +99,6 @@ progress {
   width: 15%;
   transition: width 1s;
 }
-.coinhive-miner {
-  width: 50%;
-  height: 310px;
-  margin: auto;
-}
 #top {width: 25%}
 /*tablet profile*/
 @media (min-width: 768px) and (max-width: 1024px) {
